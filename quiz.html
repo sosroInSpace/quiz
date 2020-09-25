@@ -11,10 +11,13 @@
 .products-wrapper {
     display: flex;
     flex-wrap: wrap;
-   	width: 100%;
+    width: 100%;
     margin-bottom: 15px;
     display: block;
     padding-bottom: 15px;
+}
+.form-display .paginate {
+    display: none;
 }
 
 .form {
@@ -23,6 +26,7 @@
 .form  form {
     width: 100%;
     display: flex;
+    flex-wrap:wrap;
 }
 .form-display .form {
   display:flex;
@@ -95,15 +99,15 @@ span.paginate {
     background: #fbd2e7 !important;
 }
 @keyframes errorBlink {
-	0%{
-		background: #fb9090;
-	}
-	50%{
-		background:#fff;
-	}
-	100%{
-		background: #fb9090;
-	}
+  0%{
+    background: #fb9090;
+  }
+  50%{
+    background:#fff;
+  }
+  100%{
+    background: #fb9090;
+  }
 }
 span.bg-color {
     position: absolute;
@@ -119,7 +123,7 @@ span.bg-color {
     transition:.9s;
 }
 .selected-color {
-	transition:.9s;
+  transition:.9s;
 }
 span.heading-wrapper {
     display: block;
@@ -138,12 +142,12 @@ label.answer-active .selected-color {
     transition:.5s;
 }
 label:hover .bg-color {
-	transition:.6s;
-	transform:scale(1.1);
-	background:#d3c5e2;
+  transition:.6s;
+  transform:scale(1.1);
+  background:#d3c5e2;
 }
 label.answer-active {
-	border:4px solid #fbd2e7;
+  border:4px solid #fbd2e7;
 }
 label.answer-active .bg-color {
     transition: .6s;
@@ -151,7 +155,7 @@ label.answer-active .bg-color {
     background: #d3c5e2;
 }
 * {
-	font-family:'helvetica',arial,sans-serif;
+  font-family:'helvetica',arial,sans-serif;
 }
 label.Dry___Damaged {
     background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/dry-damaged.png');
@@ -166,10 +170,10 @@ label.Itchy_Scalp {
     background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/scalp-itchy.png');
 }
 label.My_Hair_is_Healthy {
-	background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/healthy.png');
+  background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/healthy.png');
 }
 label.Thin_Flat {
-	background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/flat-fin.png');
+  background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/flat-fin.png');
 }
 label.Medium {
     background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/medium-v2.png');
@@ -181,21 +185,21 @@ label.Coloured {
     background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/coloured.png');
 }
 label.Natural {
-	background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/natural.png');
+  background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/natural.png');
 }
 label.Black_Brown,
 label.Blonde,
 label.Light_Brown,
 label.Colours,
 label.Grey_Silver {
-	height:59px;
+  height:59px;
 }
 label.Black_Brown .bg-color,
 label.Blonde .bg-color,
 label.Light_Brown .bg-color,
 label.Colours .bg-color,
 label.Grey_Silver .bg-color {
-	 margin-top: 0;
+   margin-top: 0;
     width: 40px;
     height: 40px;
     top: 5px;
@@ -207,22 +211,22 @@ label.Fine {
   background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/fine-v2.png');
 }
 label.Hydrated_Hair {
-	background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/hydrated.png');
+  background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/hydrated.png');
 }
 label.Volume {
-	background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/volume.png');
+  background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/volume.png');
 }
 label.Shine {
-	background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/shine.png');
+  background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/shine.png');
 }
 label.Smoothness {
-	background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/smoothj.png');
+  background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/smoothj.png');
 }
 label.Stronger_Hair {
-	background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/strongest-hair.png');
+  background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/strongest-hair.png');
 }
 label.Frizz_Free {
-	background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/frizz-free.png');
+  background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/frizz-free.png');
 }
 
 
@@ -263,7 +267,7 @@ label p {
    background:linear-gradient(180deg, rgba(255,255,255,0) 20%, #dfcfef 65%);
 }
 .sub-wrap h3 {
-	font-size: 22px;
+  font-size: 22px;
     margin-top: 0;
     background: linear-gradient(180deg, rgba(255,255,255,0) 20%, #dfcfef 65%);
     display: inline !important;
@@ -272,7 +276,7 @@ label p {
 }
 
 .question p {
-	font-weight:bold;
+  font-weight:bold;
 }
 label input {
     opacity: 0;
@@ -313,14 +317,14 @@ label input {
     box-shadow: 0px 0px 136px -71px rgba(0,0,0,0.75);
 }
 @keyframes resultsIn {
-	0%{
-		top:50px;
-		opacity:0;
-	}
-	100%{
-		top:0;
-		opacity:1;
-	}
+  0%{
+    top:50px;
+    opacity:0;
+  }
+  100%{
+    top:0;
+    opacity:1;
+  }
 }
 label {
     border: 4px solid;
@@ -379,19 +383,19 @@ div#quiz-container.slides-complete {
     display: none;
 }
 .active-slide{
-	 animation:labelIn 1s 1;
+   animation:labelIn 1s 1;
     animation-fill-mode:forwards;
     opacity:0;
 }
 @keyframes labelIn {
-	0%{
-		left:55px;
-		opacity:0;
-	}
-	100%{
-		left:0;
-		opacity:1;
-	}
+  0%{
+    left:55px;
+    opacity:0;
+  }
+  100%{
+    left:0;
+    opacity:1;
+  }
 }
 .sub-wrap img {
     height: 170px;
@@ -412,10 +416,10 @@ div#quiz-container.slides-complete {
     margin-top: 15px;
 }
 div#results {
-	margin-top:15px;
+  margin-top:15px;
 }
 div#results .results-intro h3 {
-	font-size: 40px;
+  font-size: 40px;
     font-weight: bold;
     padding-bottom: 25px;
     color: #222;
@@ -440,14 +444,14 @@ div#results .results-intro h3 {
     opacity:0;
 }
 @keyframes productsIn {
-	0%{
-		left:50px;
-		opacity:0;
-	}
-	100%{
-		left:0;
-		opacity:1;
-	}
+  0%{
+    left:50px;
+    opacity:0;
+  }
+  100%{
+    left:0;
+    opacity:1;
+  }
 }
 .sub-wrap {
     box-sizing: border-box;
@@ -461,7 +465,7 @@ div#results .results-intro h3 {
     margin:5px;
     width:calc(25% - 10px);
     background:#fff;
-}	
+} 
 .sub-wrap a{
        color: #222;
     text-decoration: none;
@@ -499,25 +503,25 @@ button {
     margin-top:500px;
 }
 button:hover {
-	transition:.5s;
-	background:#c8b6d9;
+  transition:.5s;
+  background:#c8b6d9;
 }
 
 @media(max-width:1100px){
-	label {
-		width: 100%;
-    	max-width: calc(50% - 10px);
-	}
-	button {
-		margin-top: 1030px;
-    	margin-bottom: 50px;
-	}
-	.products-wrapper {
-		width:100%;
-	}
-	.sub-wrap {
-		width:100%;
-	}
+  .quiz-container label {
+    width: 100%;
+      max-width: calc(50% - 10px);
+  }
+  .quiz-container button {
+    margin-top: 1030px;
+      margin-bottom: 50px;
+  }
+  .products-wrapper {
+    width:100%;
+  }
+  .sub-wrap {
+    width:100%;
+  }
   .form-display .form fieldset {
     width:100%;
     margin-bottom:15px;
@@ -535,8 +539,8 @@ button:hover {
 <div class="quiz-container" id="quiz-container">
   <div id="quiz"></div>
   <button id="previous">Previous Question</button>
-	<button id="next">Next Question</button>
-	<button id="submit">Submit Quiz</button>
+  <button id="next">Next Question</button>
+  <button id="submit">Submit Quiz</button>
 </div>
 
 <div id="results"></div>
@@ -550,7 +554,7 @@ const submitButton = document.getElementById('submit');
 
 const myQuestions = [
   {
-  	paginate: "QUESTION 1/5",
+    paginate: "QUESTION 1/5",
     question: "<span class='heading-wrapper'><h3>What is your hair concern?</h3></span> <p>Select one option below:</p>",
     answers: {
       a: "Dry & Damaged",
@@ -562,7 +566,7 @@ const myQuestions = [
     },
   },
   {
-  	paginate: "QUESTION 2/5",
+    paginate: "QUESTION 2/5",
     question: "<span class='heading-wrapper'><h3>What is your hair type?</h3></span> <p>Select one option below:</p>",
     answers: {
       a: "Fine",
@@ -571,7 +575,7 @@ const myQuestions = [
     },
   },
   {
-  	paginate: "QUESTION 3/5",
+    paginate: "QUESTION 3/5",
     question: "<span class='heading-wrapper'><h3>Is your hair...</h3></span> <p>Select one option below:</p>",
     answers: {
       a: "Coloured",
@@ -579,7 +583,7 @@ const myQuestions = [
     },
   },
   {
-  	paginate: "QUESTION 4/5",
+    paginate: "QUESTION 4/5",
     question: "<span class='heading-wrapper'><h3>What Colour is Your Hair.</h3></span> <p>Select one option below:</p>",
     answers: {
       a: "Black/Brown",
@@ -587,10 +591,10 @@ const myQuestions = [
       c: "Light Brown",
       d: "Colours",
       e: "Grey/Silver",
-	},
+  },
   },
   {
-  	paginate: "QUESTION 5/5",
+    paginate: "QUESTION 5/5",
     question: "<span class='heading-wrapper'><h3>What are your hair goals?</h3></span> <p>Select one option below:</p>",
     answers: {
       a: "Hydrated Hair",
@@ -1288,18 +1292,18 @@ const myAnswers = [
 ];
 function AnswerSelect(){
      let answers = quizMainContainer.querySelectorAll('label');
-	 
+   
 
-	 for (let i = 0; i < answers.length; i++) {
+   for (let i = 0; i < answers.length; i++) {
      answers[i].addEventListener("click", function(e) {
       let active = document.querySelector('.answer-active');
       if(active){
-      	active.classList.remove('answer-active')
+        active.classList.remove('answer-active')
       }
        e.currentTarget.classList.add("answer-active");
      });
  }
-	
+  
 }
 
 function buildQuiz(){
@@ -1316,7 +1320,7 @@ function buildQuiz(){
       // and for each available answer...
       for(letter in currentQuestion.answers){
 
-      	let labelClass = currentQuestion.answers[letter].replace(/[^A-Z0-9]/ig, "_");
+        let labelClass = currentQuestion.answers[letter].replace(/[^A-Z0-9]/ig, "_");
         // ...add an HTML radio button
         answers.push(
           `<label class="${labelClass}">
@@ -1331,8 +1335,8 @@ function buildQuiz(){
       // add this question and its answers to the output
       output.push(
       `<div class="slide">
-		    <div class="question"><span class="paginate">${currentQuestion.paginate}</span> ${currentQuestion.question} </div>
-		    <div class="answers"> ${answers.join("")} </div>
+        <div class="question"><span class="paginate">${currentQuestion.paginate}</span> ${currentQuestion.question} </div>
+        <div class="answers"> ${answers.join("")} </div>
         <div class="form" id="submit-form">
           <form>
             <fieldset class="double-row">
@@ -1397,6 +1401,11 @@ function validateEmail(email) {
 }
 
 function showResults(){
+   window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        }); 
   // check if form is filled
     const formContainer = document.getElementById('form-display');
     let inputs = formContainer.querySelectorAll('form input');
@@ -1610,15 +1619,10 @@ function showResults(){
 
           }
           
-          
+        
       }
     }
-
-     }
-      
-
-      
-  
+  }
 }
 
 // display quiz right away
@@ -1660,19 +1664,19 @@ function showNextSlide() {
   const current_slide = document.querySelector('.active-slide');
   const active_slide = document.querySelectorAll('.active-slide input');
   window.scrollTo({
-	  top: 0,
-	  left: 0,
-	  behavior: 'smooth'
-	});
-	for (i = 0; i < active_slide.length; i++) {
-		if(active_slide[i].checked){
-			 showSlide(currentSlide + 1);
-		}
-		else {
-			current_slide.classList.add('errors')
-		}
-		
-	}
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+  for (i = 0; i < active_slide.length; i++) {
+    if(active_slide[i].checked){
+       showSlide(currentSlide + 1);
+    }
+    else {
+      current_slide.classList.add('errors')
+    }
+    
+  }
  
 }
 
