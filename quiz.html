@@ -1,0 +1,1691 @@
+<style>
+.slide{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.products-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+   	width: 100%;
+    margin-bottom: 15px;
+    display: block;
+    padding-bottom: 15px;
+}
+
+.form {
+  display:none;
+}
+.form  form {
+    width: 100%;
+    display: flex;
+}
+.form-display .form {
+  display:flex;
+  flex-wrap:wrap;
+
+}
+.form-display .form fieldset {
+    width: calc(50% - 35px);
+    border: 2px solid;
+    height: 50px;
+     box-shadow: -webkit-box-shadow: 0px 0px 136px -61px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 136px -61px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 136px -61px rgba(0,0,0,0.75);
+    position:relative;
+}
+fieldset input {
+  margin-top:2px;
+   background: #eee;
+    border: none;
+    height:100%;
+    padding:15px;
+}
+fieldset.one-row input {
+    width: 100%;
+
+}
+fieldset input::placeholder {
+    font-weight: bold;
+    color: #df6daa;
+}
+fieldset.double-row input{
+    background: #eee;
+    border: none;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+fieldset.double-row input {
+    width: calc(50% - 3px);
+}
+
+span.paginate {
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: block;
+    font-size: 12px;
+    /* font-style: italic; */
+}
+.slide.active-slide.errors .selected-color {
+    background: #fb9090;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -2;
+    animation:errorBlink 1s 2;
+    animation-fill-mode:forwards;
+}
+.form-error {
+  animation:errorBlink 1s 2;
+    animation-fill-mode:forwards;
+}
+.form-error::placeholder {
+  color:#eee;
+}
+.slide.active-slide.errors label.answer-active .selected-color {
+    background: #fbd2e7 !important;
+}
+@keyframes errorBlink {
+	0%{
+		background: #fb9090;
+	}
+	50%{
+		background:#fff;
+	}
+	100%{
+		background: #fb9090;
+	}
+}
+span.bg-color {
+    position: absolute;
+    width: 100PX;
+    height: 100PX;
+    background: #ebe1f5;
+    z-index: -1;
+    border-radius: 100%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    margin-top: 53px;
+    transition:.9s;
+}
+.selected-color {
+	transition:.9s;
+}
+span.heading-wrapper {
+    display: block;
+    width: 400px;
+}
+
+label.answer-active .selected-color {
+    /* background: red; */
+    position: absolute;
+    width: 100%;
+    HEIGHT: 100%;
+    background: #fbd2e7;
+    left: 0;
+    top: 0;
+    z-index: -2;
+    transition:.5s;
+}
+label:hover .bg-color {
+	transition:.6s;
+	transform:scale(1.1);
+	background:#d3c5e2;
+}
+label.answer-active {
+	border:4px solid #fbd2e7;
+}
+label.answer-active .bg-color {
+    transition: .6s;
+    transform: scale(1.1);
+    background: #d3c5e2;
+}
+* {
+	font-family:'helvetica',arial,sans-serif;
+}
+label.Dry___Damaged {
+    background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/dry-damaged.png');
+}
+label.Frizzy {
+    background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/frizzy.png');
+}
+label.Oily {
+  background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/oily.png');
+}
+label.Itchy_Scalp {
+    background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/scalp-itchy.png');
+}
+label.My_Hair_is_Healthy {
+	background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/healthy.png');
+}
+label.Thin_Flat {
+	background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/flat-fin.png');
+}
+label.Medium {
+    background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/medium-v2.png');
+}
+label.Thick {
+    background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/thick.png');
+}
+label.Coloured {
+    background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/coloured.png');
+}
+label.Natural {
+	background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/natural.png');
+}
+label.Black_Brown,
+label.Blonde,
+label.Light_Brown,
+label.Colours,
+label.Grey_Silver {
+	height:59px;
+}
+label.Black_Brown .bg-color,
+label.Blonde .bg-color,
+label.Light_Brown .bg-color,
+label.Colours .bg-color,
+label.Grey_Silver .bg-color {
+	 margin-top: 0;
+    width: 40px;
+    height: 40px;
+    top: 5px;
+    right: 15px;
+    left:auto;
+    
+}
+label.Fine {
+  background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/fine-v2.png');
+}
+label.Hydrated_Hair {
+	background-image: url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/hydrated.png');
+}
+label.Volume {
+	background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/volume.png');
+}
+label.Shine {
+	background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/shine.png');
+}
+label.Smoothness {
+	background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/smoothj.png');
+}
+label.Stronger_Hair {
+	background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/strongest-hair.png');
+}
+label.Frizz_Free {
+	background-image:url('https://okmg-digital-assets.s3-ap-southeast-2.amazonaws.com/hair-quiz-icons/frizz-free.png');
+}
+
+
+.question {
+    margin-left: 6px;
+    position: relative;
+    display: block;
+    background: #eee;
+    padding: 15;
+    margin-bottom: 15px;
+    box-shadow: -webkit-box-shadow: 0px 0px 136px -61px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 136px -61px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 136px -61px rgba(0,0,0,0.75);
+}
+.question h3{
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 25px;
+    color: #222;
+    text-transform: uppercase;
+    /* width: 300px; */
+    max-width: 400px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 20%, #efcee0 75%);
+    display: inline;
+}
+span.heading {
+    display: block;
+    width: 70%;
+    position: absolute;
+}
+label p {
+   margin-top: 0;
+   display:inline;
+   animation:fadeInHighlight 1.7s 1;
+   animation-fill-mode:forwards;
+   background:linear-gradient(180deg, rgba(255,255,255,0) 20%, #dfcfef 65%);
+}
+.sub-wrap h3 {
+	font-size: 22px;
+    margin-top: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 20%, #dfcfef 65%);
+    display: inline !important;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.question p {
+	font-weight:bold;
+}
+label input {
+    opacity: 0;
+    position:absolute;
+}
+.sub-wrap p {
+       position: absolute;
+    bottom: 15;
+    font-size: 11px;
+    font-weight: bold;
+    width: 70%;
+    background: #f9f7f7;
+    padding: 7px;
+    transition:.9s;
+}
+.sub-wrap:hover p {
+    background: pink;
+    transition: .6s;
+    padding-left:15px;
+}
+.sub-wrap:hover .heading {
+    margin-left: 15px;
+    transition: .7s;
+}
+.slide.active-slide.form-display .answers {
+    display: none;
+}
+.results-intro {
+    background: #f9f7f7;
+    padding: 15px;
+    margin-bottom: 15px;
+    animation:resultsIn 1s 1;
+    animation-fill-mode:forwards;
+    position:relative;
+    opacity:0;
+    box-shadow: -webkit-box-shadow: 0px 0px 136px -71px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 136px -71px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 136px -71px rgba(0,0,0,0.75);
+}
+@keyframes resultsIn {
+	0%{
+		top:50px;
+		opacity:0;
+	}
+	100%{
+		top:0;
+		opacity:1;
+	}
+}
+label {
+    border: 4px solid;
+    margin: 5px;
+    text-align: center;
+    width: 200px;
+    display: block;
+    position: relative;
+    height: 250px;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    box-sizing:border-box;
+    padding:15px;
+    font-weight:bold;
+    text-align:left;
+    background-size: 51%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition:.6s;
+    -webkit-box-shadow: 0px 0px 136px -71px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 136px -71px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 136px -71px rgba(0,0,0,0.75);
+}
+
+@keyframes labelIn {
+  0%{
+    opacity:0;
+    top:15px;
+  }
+  100%{
+    opacity:1;
+    top:0;
+  }
+}
+.answer-active label:nth-child(1){
+  animation-delay:.4s;
+}
+.answer-active label:nth-child(2){
+  animation-delay:.5s;
+}
+.answer-active label:nth-child(3){
+  animation-delay:.6s;
+}
+.answer-active label:nth-child(4){
+  animation-delay:.7s;
+}
+label:nth-child(5){
+  animation-delay:.8s;
+}
+label:nth-child(6){
+  animation-delay:.8s;
+}
+
+div#quiz-container.slides-complete {
+    display: none;
+}
+.active-slide{
+	 animation:labelIn 1s 1;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+@keyframes labelIn {
+	0%{
+		left:55px;
+		opacity:0;
+	}
+	100%{
+		left:0;
+		opacity:1;
+	}
+}
+.sub-wrap img {
+    height: 170px;
+    position: absolute;
+    right: 53px;
+}
+.answers {
+    display: flex;
+    flex-wrap:wrap;
+}
+.active-slide{
+  opacity: 1;
+  z-index: 2;
+}
+.quiz-container{
+  position: relative;
+      height:481px;
+    margin-top: 15px;
+}
+div#results {
+	margin-top:15px;
+}
+div#results .results-intro h3 {
+	font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 25px;
+    color: #222;
+    text-transform: capitalize;
+    /* width: 300px; */
+    max-width: 300px;
+    margin-bottom: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 20%, #d0f9d2 75%);
+    display: inline;
+    padding-bottom: 0;
+    text-transform: uppercase;
+}
+
+.products-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    animation:productsIn 1.2s 1;
+    animation-fill-mode:forwards;
+    animation-delay:.5s;
+    left:50px;
+    position:relative;
+    opacity:0;
+}
+@keyframes productsIn {
+	0%{
+		left:50px;
+		opacity:0;
+	}
+	100%{
+		left:0;
+		opacity:1;
+	}
+}
+.sub-wrap {
+    box-sizing: border-box;
+    position: relative;
+    min-height: 199px;
+    padding: 15px;
+    border:4px solid;
+    -webkit-box-shadow: 0px 0px 136px -71px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 136px -71px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 136px -71px rgba(0,0,0,0.75);
+    margin:5px;
+    width:calc(25% - 10px);
+    background:#fff;
+}	
+.sub-wrap a{
+       color: #222;
+    text-decoration: none;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+}
+.results-intro p {
+    font-size: 21px;
+}
+span.heading {
+    display: block;
+    width: 180px;
+    position: absolute;
+    z-index: 9;
+    transition:.6s;
+}
+button {
+    background: #e06eaa;
+    border: none;
+    padding: 15px 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: .5px;
+    cursor: pointer;
+    transition: .5s;
+    position: relative;
+    margin-left: 7px;
+    margin-top:500px;
+}
+button:hover {
+	transition:.5s;
+	background:#c8b6d9;
+}
+
+@media(max-width:1100px){
+	label {
+		width: 100%;
+    	max-width: calc(50% - 10px);
+	}
+	button {
+		margin-top: 1030px;
+    	margin-bottom: 50px;
+	}
+	.products-wrapper {
+		width:100%;
+	}
+	.sub-wrap {
+		width:100%;
+	}
+  .form-display .form fieldset {
+    width:100%;
+    margin-bottom:15px;
+    height:auto;
+  }
+  fieldset.double-row input {
+    width: 100%;
+    height: 50px;
+  }
+  fieldset.double-row input:nth-child(1) {
+    margin-bottom: 15px;
+  }
+}
+</style>
+<div class="quiz-container" id="quiz-container">
+  <div id="quiz"></div>
+  <button id="previous">Previous Question</button>
+	<button id="next">Next Question</button>
+	<button id="submit">Submit Quiz</button>
+</div>
+
+<div id="results"></div>
+
+<script>
+const quizMainContainer = document.getElementById('quiz-container');
+const quizContainer = document.getElementById('quiz');
+const resultsContainer = document.getElementById('results');
+const submitButton = document.getElementById('submit');
+
+
+const myQuestions = [
+  {
+  	paginate: "QUESTION 1/5",
+    question: "<span class='heading-wrapper'><h3>What is your hair concern?</h3></span> <p>Select one option below:</p>",
+    answers: {
+      a: "Dry & Damaged",
+      b: "Oily",
+      c: "Frizzy",
+      d: "Itchy/Scalp",
+      e: "My Hair is Healthy",
+      f: "Thin/Flat"
+    },
+  },
+  {
+  	paginate: "QUESTION 2/5",
+    question: "<span class='heading-wrapper'><h3>What is your hair type?</h3></span> <p>Select one option below:</p>",
+    answers: {
+      a: "Fine",
+      b: "Medium",
+      c: "Thick"
+    },
+  },
+  {
+  	paginate: "QUESTION 3/5",
+    question: "<span class='heading-wrapper'><h3>Is your hair...</h3></span> <p>Select one option below:</p>",
+    answers: {
+      a: "Coloured",
+      b: "Natural",
+    },
+  },
+  {
+  	paginate: "QUESTION 4/5",
+    question: "<span class='heading-wrapper'><h3>What Colour is Your Hair.</h3></span> <p>Select one option below:</p>",
+    answers: {
+      a: "Black/Brown",
+      b: "Blonde",
+      c: "Light Brown",
+      d: "Colours",
+      e: "Grey/Silver",
+	},
+  },
+  {
+  	paginate: "QUESTION 5/5",
+    question: "<span class='heading-wrapper'><h3>What are your hair goals?</h3></span> <p>Select one option below:</p>",
+    answers: {
+      a: "Hydrated Hair",
+      b: "Volume",
+      c: "Shine",
+      d: "Smoothness",
+      e: "Stronger Hair",
+      f: "Frizz Free"
+    }
+  },
+  {
+    paginate: "QUESTION 5/5",
+    question: "<span class='heading-wrapper'><h3>Get your results</h3></span> <p>Fill in the form below to receive your results.</p>",
+    answers: {
+      a: "",
+      b: "",
+      c: "",
+      d: "",
+      e: "",
+      f: ""
+    }
+  },
+];
+
+// ansers array to check on submission
+const myAnswers = [
+   {
+      "match":[
+         "Dry & Damaged",
+         "Fine",
+         "Coloured"
+      ],
+      "intro_para":"You have Dry & Damaged, Fine Natural Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"Matrix Volume Bloom Shampoo",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Matrix_20Volumebloom_20Sham_20400ml_1c2f0e86-452a-497b-be49-604d55b5f7eb_530x@2x.jpg?v=1600312420",
+            "link":"https://trade.hairsupplies.com.au/products/matrix-volumebloom-sham-400ml?_pos=5&_sid=3fdb7ca66&_ss=r",
+            "info":"Matrix Biolage Volumebloom Shampoo 400ml Gentle.."
+         },
+         {
+            "name":"Matrix Hydra Source Conditioner",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Matrix_20Smoothproof_20Cond_20400ml_530x@2x.jpg?v=1600318529",
+            "link":"https://trade.hairsupplies.com.au/products/matrix-smoothproof-cond-400ml?_pos=9&_sid=a1e73a089&_ss=r",
+            "info":"Matrix Biolage Smoothproof Conditioner 400ml.."
+         },
+         {
+            "name":"Davroe Volume Senses Shampoo",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Davroe_20Volume_20Shampoo_20325ml_530x@2x.jpg?v=1601002036",
+            "link":"https://trade.hairsupplies.com.au/products/davroe-volume-shampoo-325ml?_pos=1&_sid=7a41a1fe0&_ss=r",
+            "info":"Davroe Volume Senses Amplifying Shampoo 325ml.."
+         },
+         {
+            "name":"Davroe Repair Senses",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Davroe_20Colour_20Repair_20Sham_20325_530x@2x.jpg?v=1600674297",
+            "link":"https://trade.hairsupplies.com.au/products/davroe-colour-repair-sham-325?_pos=1&_sid=403286b65&_ss=r",
+            "info":"Davroe Colour Senses Repair Shampoo 325ml.."
+         }
+      ]
+   },
+   {
+      "match":[
+         "Dry & Damaged",
+         "Normal",
+         "Coloured"
+      ],
+      "intro_para":"You have Dry & Damaged, Thick Coloured Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"Redken Color Extend Shampoo",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/2160062_99914b49-b96d-434e-9e9f-3e65e7813fa6_530x@2x.jpg?v=1600762323",
+            "link":"https://trade.hairsupplies.com.au/products/redken-color-ext-mag-sham-300m?_pos=1&_sid=594d70dae&_ss=r",
+            "info":"Redken Color Extend Magnetics Shampoo 300ml The sulfate-free, color captivating.."
+         },
+         {
+            "name":"Redken Color Extend Conditioner",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/2160550_530x@2x.jpg?v=1600957419",
+            "link":"https://trade.hairsupplies.com.au/products/redken-ce-blondage-cond-250ml?_pos=7&_sid=594d70dae&_ss=r",
+            "info":"Redken Color Extend Blondage Conditioner 250ml Keep your blonde hair.."
+         },
+         {
+            "name":"CPR Colour Anti Fade Shampoo",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/VF_20CPR_20Col_20AntiFade_20Sham_20900ml_530x@2x.jpg?v=1601008475",
+            "link":"https://trade.hairsupplies.com.au/products/vf-cpr-col-antifade-sham-900ml?_pos=1&_sid=00197de2e&_ss=r",
+            "info":"Vitafive CPR Colour Anti Fade Shampoo 900ml A gentle, colour extending cleanser.."
+         },
+         {
+            "name":"CPR Colour Anti Fade Conditioner",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/VF_20CPR_20Col_20AntiFade_20Cond_20900ml_cf55021f-46aa-4a69-a6be-badd7c8a62fa_530x@2x.jpg?v=1600325461",
+            "link":"https://trade.hairsupplies.com.au/products/vf-cpr-col-antifade-cond-900ml?_pos=1&_sid=6db716e1c&_ss=r",
+            "info":"Vitafive CPR Colour Anti Fade Conditioner 900ml Intelligent botanical actives.."
+         },
+      ]
+   },
+   {
+      "match":[
+         "Dry & Damaged",
+         "Normal",
+         "Natural"
+      ],
+      "intro_para":"You have Dry & Damaged, Thick Natural Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"CPR Nourish Shampoo and Conditioner.",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/VF_20CPR_20Hydra_20Soft_20Condi_20900ml_45428b15-4d43-4185-a472-b1f27525c852_530x@2x.jpg?v=1601008496",
+            "link":"https://trade.hairsupplies.com.au/products/vf-cpr-hydra-soft-condi-900ml?_pos=1&_sid=65228381e&_ss=r",
+            "info":"Vitafive CPR Nourish Hydra Soft Conditioner 900ml Nourish the hair with this instantly effective.."
+         },
+        {
+            "name":"RPR Rejuvenate Shampoo",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/RPR_20Rejuvenate_20Sham_20300_bf3f72da-0245-4952-97d7-78161a4fdb9b_530x@2x.jpg?v=1600837418",
+            "link":"https://trade.hairsupplies.com.au/products/rpr-rejuvenate-sham-300ml?_pos=2&_sid=31f0f790e&_ss=r",
+            "info":"RPR Rejuvenate My Hair Shampoo 300ml Turn back time with this rejuvenating shampoo.."
+         },
+         {
+            "name":"RPR Rejuvenate Conditioner",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/RPR_20Rejuvenate_20Cond_20300_d8b58707-8b78-4515-93ef-ebcaacd7397b_530x@2x.jpg?v=1600838878",
+            "link":"https://trade.hairsupplies.com.au/products/rpr-rejuvenate-cond-300ml?_pos=1&_sid=31f0f790e&_ss=r",
+            "info":"RPR Rejuvenate My Hair Conditioner 300ml Turn back time with this rejuvenating conditioner.."
+         },
+      ]
+   },
+   {
+      "match":[
+         "Dry & Damaged",
+         "Thick",
+         "Coloured"
+      ],
+      "intro_para":"You have Dry & Damaged, Thick Natural Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"Joico K-Pak Reconstructing Shampoo ",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Joico_20KPak_20Sham_20300_530x@2x.jpg?v=1600316064",
+            "link":"https://trade.hairsupplies.com.au/products/joico-k-pak-shampoo-1-litre?_pos=4&_sid=d1a885caf&_ss=r",
+            "info":"Joico K-Pak Recontructing Shampoo 1 Litre Joico K-PAK Shampoo is the perfect shampoo.."
+         },
+         {
+            "name":"Joico K-Pak Reconstructing Conditioner",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Joico_20KPak_20Cond_20300_cbd5982b-0ee1-403f-a623-fa57b593fa8a_530x@2x.jpg?v=1599709038",
+            "link":"https://trade.hairsupplies.com.au/products/joico-k-pak-conditioner-300ml?_pos=5&_sid=d1a885caf&_ss=r",
+            "info":"Joico K-Pak Reconstructing Conditioner 300ml We're on a mission to repair hair thats been assaulted by the rigors.."
+         },
+         {
+            "name":"Joico K-Pak Intense Hydrator",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/K-Pak_20Intense_20Hydrator_20250ml_d6b865df-a8c7-49ab-9434-b215042d4266_530x@2x.jpg?v=1600320670",
+            "link":"https://trade.hairsupplies.com.au/products/k-pak-intense-hydrator-250ml?_pos=1&_sid=bc47bbfa1&_ss=r",
+            "info":"Joico K-Pak Intense Hydrator 250ml A 3- to 5-minute treatment.."
+         },
+         {
+            "name":"Theorie Helichrysum Nourishing Shampoo ",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Theorie_20Helichrysum_20Sham_20800_e8113cbb-d702-4be9-8edd-cf07f4ef8065_530x@2x.jpg?v=1600923185",
+            "link":"https://trade.hairsupplies.com.au/products/theorie-helichrysum-sham-800?_pos=1&_sid=5e5ddb8bc&_ss=r",
+            "info":"Theorie Helichrysum Nourishing Shampoo 800ml The Theorie Helichrysum.."
+         }
+      ]
+   },
+   {
+      "match":[
+         "Oily",
+         "Fine",
+         "Coloured"
+      ],
+      "intro_para":"You have Oily, Fine Coloured Hair - We've got the remedy for you.",
+      "results":{
+         "one":{
+            "name":"Muk",
+            "image":"aga",
+            "link":"gaga",
+            "info":"gagagag"
+         }
+      }
+   },
+   {
+      "match":[
+         "Oily",
+         "Fine",
+         "Natural"
+      ],
+      "intro_para":"You have Oily, Fine Natural Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"Biolage Normalizing Shampoo",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Matrix_20Normalizing_20Sham_20400ml_530x@2x.jpg?v=1600851208",
+            "link":"https://trade.hairsupplies.com.au/products/matrix-normalizing-sham-400ml?_pos=1&_sid=a541c80af&_ss=r",
+            "info":"Matrix Biolage Normalizing Shampoo 400ml Cleanses oily scalps.."
+         },
+        {
+            "name":"So magic",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/SO_20Magic_20Styling_20Treatment_20200_a9f8e6d2-f760-4da2-a4d0-a72585ab5368_530x@2x.jpg?v=1600999033",
+            "link":"https://trade.hairsupplies.com.au/products/so-magic-styling-treatment-200?_pos=1&_sid=449d3de6b&_ss=r",
+            "info":"Salon Only Magic Styling Treatment 200ml So advanced and lightweight.."
+         },
+       
+         {
+            "name":"Emsibeth MyTen leave in",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Ems_20MyTen_20Leave_20In_20150ml_530x@2x.jpg?v=1600835160",
+            "link":"https://trade.hairsupplies.com.au/products/emsi-myten-leave-in-mask-150ml-1?_pos=1&_sid=758a517ad&_ss=r",
+            "info":"Emsibeth MyTen 10 Leave In Multiaction Mask 150ml A no rinse intensive spray mask.."
+         }
+      ]
+   },
+   {
+      "match":[
+         "Oily",
+         "Normal",
+         "Coloured"
+      ],
+      "intro_para":"You have Oily, Normal Coloured Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"MUk Head Muk Oily Scalp",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Muk_20Head_20Muk_20Oily_20Sham_20300_7625ea88-5554-4c92-b8cc-6244e6ffeb2c_530x@2x.jpg?v=1599631016",
+            "link":"https://trade.hairsupplies.com.au/products/muk-head-muk-oily-sham-300?_pos=1&_sid=528860413&_ss=r",
+            "info":"Muk Head Muk Oily Scalp Shampoo 300ml For oily scalp & dry ends. Gently eliminates scalp oil & controls sebum production.."
+         },
+        
+      ]
+   },
+   {
+      "match":[
+         "Oily",
+         "Normal",
+         "Natural"
+      ],
+      "intro_para":"You have Oily, Normal Natural Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         }
+      ]
+   },
+   {
+      "match":[
+         "Oily",
+         "Thick",
+         "Coloured"
+      ],
+      "intro_para":"You have Oily, Thick Coloured Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         }
+      ]
+   },
+   {
+      "match":[
+         "Oily",
+         "Thick",
+         "Natural"
+      ],
+      "intro_para":"You have Oily, Thick Natural Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"Paul Mitchell Shampoo Two",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/PMitch_20Spoo_20Two_20_201580033_530x@2x.jpg?v=1600480149",
+            "link":"https://trade.hairsupplies.com.au/products/paul-mitchell-shampoo-two-300m?_pos=1&_sid=05cfdd115&_ss=r",
+            "info":"Paul Mitchell Shampoo Two 300ml Clarifying. Removes Build-up Shampoo.."
+         }
+         
+      ]
+   },
+   {
+      "match":[
+         "Frizzy",
+         "Fine",
+         "Coloured"
+      ],
+      "intro_para":"You have Frizzy, Fine Coloured Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         }
+      ]
+   },
+   {
+      "match":[
+         "Frizzy",
+         "Fine",
+         "Natural"
+      ],
+      "intro_para":"You have Frizzy, Fine Natural Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         }
+      ]
+   },
+   {
+      "match":[
+         "Frizzy",
+         "Normal",
+         "Coloured"
+      ],
+      "intro_para":"You have Frizzy, Normal Coloured Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "paragraph":"",
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         }
+      ]
+   },
+   {
+      "match":[
+         "Frizzy",
+         "Normal",
+         "Natural"
+      ],
+      "intro_para":"You have Frizzy, Normal Natural Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+        {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         }
+      ]
+   },
+   {
+      "match":[
+         "Frizzy",
+         "Thick",
+         "Coloured"
+      ],
+      "intro_para":"You have Frizzy, Thick Coloured Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         }
+      ]
+   },
+   {
+      "match":[
+         "Frizzy",
+         "Thick",
+         "Natural"
+      ],
+      "intro_para":"You have Frizzy, Thick Natural Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         },
+         {
+            "name":"",
+            "image":"",
+            "link":"",
+            "info":""
+         }
+      ]
+   },
+   {
+      "match":[
+         "Itchy/Scalp",
+         "Fine",
+         "Coloured",
+      ],
+      "intro_para":"You have Itchy, Fine Coloured Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"Delorenzo Scalp Relief Cream",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Del_20Relief_201110156_530x@2x.jpg?v=1600912796",
+            "link":"https://trade.hairsupplies.com.au/products/delor-scalp-relief-cream-50g?_pos=5&_sid=f07e9f4a2&_ss=r",
+            "info":"De Lorenzo Scalp Relief Cream 50g Treat your irritated scalp with De Lorenzo Tricho Scalp Relief Treatment Creme.."
+         },
+         {
+            "name":"Delorenzo Tricho Sensitive Conditioner",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/DeLor_20Scalp_20Control_20Cond_20200ml_13d08d53-6a12-417a-8b56-867292839a7a_530x@2x.jpg?v=1600920302",
+            "link":"https://trade.hairsupplies.com.au/products/delor-scalp-cont-cond-200ml?_pos=4&_sid=f07e9f4a2&_ss=r",
+            "info":"De Lorenzo Tricho Scalp Control Cond 200ml Formulated to relieve symptoms of the scalp associated with dandruff, itching, flaking.."
+         }
+      ]
+   },
+   {
+      "match":[
+         "Itchy/Scalp",
+         "Fine",
+         "Natural"
+      ],
+      "intro_para":"You have Itchy, Fine Natural Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"Delorenzo Tricho Scalp Balance Shampoo",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/1110452_b71e3208-cd4d-44cd-8397-66a5d43e4d7e_530x@2x.jpg?v=1600745203",
+            "link":"https://trade.hairsupplies.com.au/products/delor-tricho-scalp-balance-pk?_pos=1&_sid=c9a7b61f2&_ss=r",
+            "info":"Delorenzo Tricho Scalp Balance Pack A simple three step treatment program formulated to relieve the symptoms of itch.."
+         },
+         {
+            "name":"Davroe Scalp Remedy Shampoo",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Davroe_20Anti-Dandruff_20Sham_20325m_530x@2x.jpg?v=1600745182",
+            "link":"https://trade.hairsupplies.com.au/products/davroe-anti-dandruff-sham-325m?_pos=3&_sid=db19d541b&_ss=r",
+            "info":"Davroe Scalp Remedy Anti-Dandruff Shampoo 325ml; Instant relief, Colour safe.."
+         },
+         {
+            "name":"Delorenzo Tricho Scalp Balance conditioner",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/1110452_b71e3208-cd4d-44cd-8397-66a5d43e4d7e_530x@2x.jpg?v=1600745203",
+            "link":"https://trade.hairsupplies.com.au/products/delor-tricho-scalp-balance-pk?_pos=1&_sid=f82c926a2&_ss=r",
+            "info":"Delorenzo Tricho Scalp Balance Pack A simple three step treatment program.."
+         },
+         {
+            "name":"Davroe Scalp Remedy Conditioner",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Davroe_20Anti-Dandruff_20Cond_20325m_efbeb73f-8314-45af-aac8-6c754d086c8c_530x@2x.jpg?v=1600745176",
+            "link":"https://trade.hairsupplies.com.au/products/davroe-anti-dandruff-cond-325m?_pos=1&_sid=3edfa3d4c&_ss=r",
+            "info":"Davroe Scalp Remedy Anti-Dandruff Conditioner 325ml; Nourishes and soothes the scalp.."
+         },
+      ]
+   },
+   {
+      "match":[
+         "Itchy/Scalp",
+         "Normal",
+         "Coloured"
+      ],
+      "intro_para":"You have Itchy, Normal Coloured Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"Davroe Scalp Remedy Shampoo",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Davroe_20Anti-Dandruff_20Sham_20325m_530x@2x.jpg?v=1600745182",
+            "link":"https://trade.hairsupplies.com.au/products/davroe-anti-dandruff-sham-325m?_pos=3&_sid=5f18b8e82&_ss=r",
+            "info":"Davroe Scalp Remedy Anti-Dandruff Shampoo 325ml, Instant relief; Colour safe.."
+         },
+         {
+            "name":"Davroe Scalp Remedy Conditioner",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Davroe_20Anti-Dandruff_20Cond_20325m_efbeb73f-8314-45af-aac8-6c754d086c8c_530x@2x.jpg?v=1600745176",
+            "link":"https://trade.hairsupplies.com.au/products/davroe-anti-dandruff-cond-325m?_pos=1&_sid=1ae33546c&_ss=r",
+            "info":"Davroe Scalp Remedy Anti-Dandruff Conditioner 325ml, Nourishes and soothes the scalp.."
+         },
+         {
+            "name":"Davroe Scalp Remedy Lotion",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Dav_20Anti-Dand_20Lotion_20Spray_20125_ffff5c8a-502d-4b52-be16-d26f618d59cb_530x@2x.jpg?v=1600060396",
+            "link":"https://trade.hairsupplies.com.au/products/dav-anti-dand-lotion-spray-125?_pos=1&_sid=c21fada21&_ss=r",
+            "info":"Davroe Scalp Remedy Anti-Dandruff Lotion Spray 125ml Lightweight leave-in treatment.."
+         },
+      ]
+   },
+   {
+      "match":[
+         "Itchy/Scalp",
+         "Medium",
+         "Natural",
+      ],
+      "intro_para":"You have Itchy, Normal Natural Hair - We've got the remedy for you.",
+      "results":[
+        {
+            "name":"Davroe Scalp Remedy Shampoo",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Davroe_20Anti-Dandruff_20Sham_20325m_530x@2x.jpg?v=1600745182",
+            "link":"https://trade.hairsupplies.com.au/products/davroe-anti-dandruff-sham-325m?_pos=3&_sid=5f18b8e82&_ss=r",
+            "info":"Davroe Scalp Remedy Anti-Dandruff Shampoo 325ml, Instant relief; Colour safe.."
+         },
+         {
+            "name":"Davroe Scalp Remedy Conditioner",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Davroe_20Anti-Dandruff_20Cond_20325m_efbeb73f-8314-45af-aac8-6c754d086c8c_530x@2x.jpg?v=1600745176",
+            "link":"https://trade.hairsupplies.com.au/products/davroe-anti-dandruff-cond-325m?_pos=1&_sid=1ae33546c&_ss=r",
+            "info":"Davroe Scalp Remedy Anti-Dandruff Conditioner 325ml, Nourishes and soothes the scalp.."
+         },
+         {
+            "name":"Davroe Scalp Remedy Lotion",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Dav_20Anti-Dand_20Lotion_20Spray_20125_ffff5c8a-502d-4b52-be16-d26f618d59cb_530x@2x.jpg?v=1600060396",
+            "link":"https://trade.hairsupplies.com.au/products/dav-anti-dand-lotion-spray-125?_pos=1&_sid=c21fada21&_ss=r",
+            "info":"Davroe Scalp Remedy Anti-Dandruff Lotion Spray 125ml Lightweight leave-in treatment.."
+         },
+         {
+            "name":"Muk Head Muk Dandruff Control Shampoo",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Muk_20Head_20Muk_20Dandruff_20Sham_20300_89bed19e-3ba3-4b2e-91d0-dcab3956f424_530x@2x.jpg?v=1599062312",
+            "link":"https://trade.hairsupplies.com.au/products/muk-head-dandruff-sham-300-d?_pos=1&_sid=0f3de9528&_ss=r",
+            "info":"Muk Head Muk Dandruff Control Shampoo 300ml (D) Quickly controls flaking and itching associated with dandruff.."
+         }
+      ]
+   },
+   {
+      "match":[
+         "Itchy/Scalp",
+         "Thick",
+         "Coloured"
+      ],
+      "intro_para":"You have Itchy, Thick Coloured Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"Davroe Scalp Remedy Shampoo",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Davroe_20Anti-Dandruff_20Sham_20325m_530x@2x.jpg?v=1600745182",
+            "link":"https://trade.hairsupplies.com.au/products/davroe-anti-dandruff-sham-325m?_pos=3&_sid=5f18b8e82&_ss=r",
+            "info":"Davroe Scalp Remedy Anti-Dandruff Shampoo 325ml, Instant relief; Colour safe.."
+         },
+         {
+            "name":"Davroe Scalp Remedy Conditioner",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Davroe_20Anti-Dandruff_20Cond_20325m_efbeb73f-8314-45af-aac8-6c754d086c8c_530x@2x.jpg?v=1600745176",
+            "link":"https://trade.hairsupplies.com.au/products/davroe-anti-dandruff-cond-325m?_pos=1&_sid=1ae33546c&_ss=r",
+            "info":"Davroe Scalp Remedy Anti-Dandruff Conditioner 325ml, Nourishes and soothes the scalp.."
+         },
+         {
+            "name":"Davroe Scalp Remedy Lotion",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Dav_20Anti-Dand_20Lotion_20Spray_20125_ffff5c8a-502d-4b52-be16-d26f618d59cb_530x@2x.jpg?v=1600060396",
+            "link":"https://trade.hairsupplies.com.au/products/dav-anti-dand-lotion-spray-125?_pos=1&_sid=c21fada21&_ss=r",
+            "info":"Davroe Scalp Remedy Anti-Dandruff Lotion Spray 125ml Lightweight leave-in treatment.."
+         },
+         {
+            "name":"Muk Head Muk Dandruff Control Shampoo",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Muk_20Head_20Muk_20Dandruff_20Sham_20300_89bed19e-3ba3-4b2e-91d0-dcab3956f424_530x@2x.jpg?v=1599062312",
+            "link":"https://trade.hairsupplies.com.au/products/muk-head-dandruff-sham-300-d?_pos=1&_sid=0f3de9528&_ss=r",
+            "info":"Muk Head Muk Dandruff Control Shampoo 300ml (D) Quickly controls flaking and itching associated with dandruff.."
+         }
+      ]
+   },
+   {
+      "match":[
+         "Itchy/Scalp",
+         "Thick",
+         "Natural"
+      ],
+      "intro_para":"You have Itchy, Thick Natural Hair - We've got the remedy for you.",
+      "results":[
+         {
+            "name":"Davroe Scalp Remedy Shampoo",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Davroe_20Anti-Dandruff_20Sham_20325m_530x@2x.jpg?v=1600745182",
+            "info": "Davroe Scalp Remedy Anti-Dandruff Shampoo 325ml, Instant relief, Colour safe..",
+            "link":"https://trade.hairsupplies.com.au/products/davroe-anti-dandruff-sham-325m?_pos=4&_sid=4ec8e26d3&_ss=r"
+         },
+         {
+            "name":"Davroe Scalp Remedy Conditioner",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Davroe_20Anti-Dandruff_20Cond_20325m_efbeb73f-8314-45af-aac8-6c754d086c8c_530x@2x.jpg?v=1600745176",
+            "info":"Davroe Scalp Remedy Anti-Dandruff Conditioner 325ml, Nourishes and soothes the scalp..",
+            "link":"https://trade.hairsupplies.com.au/products/davroe-anti-dandruff-cond-325m?_pos=1&_sid=4ec8e26d3&_ss=r"
+         },
+         {
+            "name":"Davroe Scalp Remedy  Lotion",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Dav_20Anti-Dand_20Lotion_20Spray_20125_ffff5c8a-502d-4b52-be16-d26f618d59cb_530x@2x.jpg?v=1600060396",
+            "info": "Davroe Scalp Remedy Anti-Dandruff Lotion Spray 125ml Lightweight leave-in treatment..",
+            "link":"https://trade.hairsupplies.com.au/products/dav-anti-dand-lotion-spray-125?_pos=1&_sid=417964e6b&_ss=r"
+         },
+         {
+            "name":"Muk Head Muk Dandruff Control Shampoo",
+            "image":"https://cdn.shopify.com/s/files/1/0026/1560/7341/products/Muk_20Head_20Muk_20Dandruff_20Sham_20300_89bed19e-3ba3-4b2e-91d0-dcab3956f424_530x@2x.jpg?v=1599062312",
+            "info": "Muk Head Muk Dandruff Control Shampoo 300ml (D) Quickly controls flaking and itching associated with dandruff..",
+            "link":"https://trade.hairsupplies.com.au/products/muk-head-dandruff-sham-300-d?_pos=1&_sid=082004384&_ss=r"
+         }
+      ]
+   }
+];
+function AnswerSelect(){
+     let answers = quizMainContainer.querySelectorAll('label');
+	 
+
+	 for (let i = 0; i < answers.length; i++) {
+     answers[i].addEventListener("click", function(e) {
+      let active = document.querySelector('.answer-active');
+      if(active){
+      	active.classList.remove('answer-active')
+      }
+       e.currentTarget.classList.add("answer-active");
+     });
+ }
+	
+}
+
+function buildQuiz(){
+  // variable to store the HTML output
+  const output = [];
+
+  // for each question...
+  myQuestions.forEach(
+    (currentQuestion, questionNumber) => {
+
+      // variable to store the list of possible answers
+      const answers = [];
+
+      // and for each available answer...
+      for(letter in currentQuestion.answers){
+
+      	let labelClass = currentQuestion.answers[letter].replace(/[^A-Z0-9]/ig, "_");
+        // ...add an HTML radio button
+        answers.push(
+          `<label class="${labelClass}">
+            <span class="bg-color"></span>
+            <span class="selected-color"></span>
+            <input type="radio" name="question${questionNumber}" value="${currentQuestion.answers[letter]}" class="radio-buttons" id="${labelClass}">
+            <span><p>${currentQuestion.answers[letter]}</p></span>
+          </label>`
+        );
+      }
+
+      // add this question and its answers to the output
+      output.push(
+      `<div class="slide">
+		    <div class="question"><span class="paginate">${currentQuestion.paginate}</span> ${currentQuestion.question} </div>
+		    <div class="answers"> ${answers.join("")} </div>
+        <div class="form" id="submit-form">
+          <form>
+            <fieldset class="double-row">
+              <input type="text" name="first-name" id="first-name" placeholder="Enter your first name*" value=""/>
+              <input type="text" name="last-name" id="last-name" placeholder="Enter your last name*" value=""/>
+            </fieldset>
+            <fieldset class="one-row">
+              <input type="email" name="email" id="email" placeholder="Enter your email address*" value=""/>
+            </fieldset>
+          </form>
+        </div>
+       </div>`
+      );
+    }
+  );
+
+  // finally combine our output list into one string of HTML and put it on the page
+  quizContainer.innerHTML = output.join('');
+}
+
+// google sheet
+function  submitToGoogleSheets(first_name, last_name, email, choice_0, choice_1, choice_2, choice_3, choice_4, choice_5, choice_6, choice_7, choice_8, choice_9, choice_10, choice_11, choice_12, choice_13, choice_14, choice_15, choice_16, choice_17, choice_18) {
+
+     const currentDateTime =  new Date().toLocaleString();
+     const location = window.location.href;
+
+      const FORM_GOOGLE_API_URL = 'https://script.google.com/macros/s/AKfycbxDZHQkAxSv_b3FffM_FX1d7g5qkcbBbx_k-yA_Do3-Z-C3rERn/exec'
+    + '?first-name=' + encodeURIComponent(first_name)
+    + '&last-name=' + encodeURIComponent(last_name)
+    + '&email=' + encodeURIComponent(email)
+    + '&Dry___Damaged=' + encodeURIComponent(choice_0)
+    + '&Frizzy=' + encodeURIComponent(choice_1)
+    + '&Itchy_Scalp=' + encodeURIComponent(choice_2) 
+    + '&My_Hair_is_Healthy=' + encodeURIComponent(choice_3)
+    + '&Thin_Flat=' + encodeURIComponent(choice_4)
+    + '&Thin_Flat=' + encodeURIComponent(choice_5)
+    + '&Coloured=' + encodeURIComponent(choice_6)
+    + '&Natural=' + encodeURIComponent(choice_7)
+    + '&Black_Brown=' + encodeURIComponent(choice_8)
+    + '&Blonde=' + encodeURIComponent(choice_9)
+    + '&Light_Brown=' + encodeURIComponent(choice_10)
+    + '&Colours=' + encodeURIComponent(choice_11)
+    + '&Gye_Silver=' + encodeURIComponent(choice_12)
+    + '&Hydrated_Hair=' + encodeURIComponent(choice_13)
+    + '&Volume=' + encodeURIComponent(choice_14)
+    + '&Shine=' + encodeURIComponent(choice_15)
+    + '&Smoothness=' + encodeURIComponent(choice_16)
+    + '&Stronger_Hair=' + encodeURIComponent(choice_17)
+    + '&Frizz_Free=' + encodeURIComponent(choice_18)
+    + '&date_time=' + currentDateTime
+    + '&source=' + location
+
+    const httpRequest = new XMLHttpRequest();
+    httpRequest.open('GET', FORM_GOOGLE_API_URL);
+    httpRequest.send();
+    console.log(FORM_GOOGLE_API_URL);
+  }
+
+function validateEmail(email) {
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
+function showResults(){
+  // check if form is filled
+    const formContainer = document.getElementById('form-display');
+    let inputs = formContainer.querySelectorAll('form input');
+     console.log(inputs[0].value);
+
+     if(inputs[0].value === ""){
+        inputs[0].classList.add('form-error');
+     }
+     else if(inputs[1].value === ""){
+        inputs[1].classList.add('form-error');
+     }
+     else if(validateEmail(inputs[2].value) === false){
+        inputs[2].classList.add('form-error');
+     }
+     else {
+
+      // define radio variable values to send.
+      let dry_damaged;
+      let oily;
+      let frizzy;
+      let itchy;
+      let healthy;
+      let thin;
+
+      let coloured;
+      let natural;
+
+      let black_brown;
+      let blonde;
+      let light_brown;
+      let Colours;
+      let grey_silver;
+
+      let hydrated;
+      let volume; 
+      let shine;
+      let smoothness;
+      let stronger_hair;
+      let frizz_free;
+      // check check boxes
+      if (document.getElementById('Dry___Damaged').checked){
+        dry_damaged = 'yes';
+      }
+      else {
+        dry_damaged = '';
+      }
+      if (document.getElementById('Oily').checked){
+        oily = 'yes';
+      }
+      else {
+        oily = '';
+      }
+
+      if(document.getElementById('Frizzy').checked){
+        frizzy = 'yes';
+      }
+      else {
+        frizzy  = ' ';
+      }
+      if (document.getElementById('Itchy_Scalp').checked){
+        itchy = 'yes';
+      }
+      else {
+        itchy = '';
+      }
+      if (document.getElementById('My_Hair_is_Healthy').checked){
+        healthy = 'yes';
+      }
+      else {
+        healthy = '';
+      }
+      
+      if (document.getElementById('Thin_Flat').checked){
+        thin = 'yes';
+      }
+      else {
+        thin = '';
+      }
+      if (document.getElementById('Coloured').checked){
+        coloured = 'yes';
+      }
+      else {
+        coloured = '';
+      }
+      if (document.getElementById('Natural').checked){
+        natural = 'yes';
+      }
+      else {
+        natural = '';
+      }
+      if (document.getElementById('Black_Brown').checked){
+        black_brown = 'yes';
+      }
+      else {
+        black_brown = '';
+      }
+      if (document.getElementById('Blonde').checked){
+        blonde = 'yes';
+      }
+      else {
+        blonde = '';
+      }
+      if (document.getElementById('Light_Brown').checked){
+        light_brown = 'yes';
+      }
+      else {
+        light_brown = '';
+      }
+      if (document.getElementById('Colours').checked){
+        Colours = 'yes';
+      }
+      else {
+        Colours = '';
+      }
+      if (document.getElementById('Grey_Silver').checked){
+        grey_silver = 'yes';
+      }
+      else {
+        grey_silver = '';
+      }
+      if (document.getElementById('Hydrated_Hair').checked){
+        hydrated = 'yes';
+      }
+      else {
+        hydrated = '';
+      }
+      if (document.getElementById('Volume').checked){
+        volume = 'yes';
+      }
+      else {
+        volume = '';
+      }
+      if (document.getElementById('Shine').checked){
+        shine = 'yes';
+      }
+      else {
+        shine = '';
+      }
+      if (document.getElementById('Smoothness').checked){
+        smoothness = 'yes';
+      }
+      else {
+        smoothness = '';
+      }
+      if (document.getElementById('Stronger_Hair').checked){
+        stronger_hair = 'yes';
+      }
+      else {
+        stronger_hair = '';
+      }
+      if (document.getElementById('Frizz_Free').checked){
+        frizz_free = 'yes';
+      }
+      else {
+        frizz_free = '';
+      }
+
+
+      submitToGoogleSheets(inputs[0].value, inputs[1].value, inputs[2].value, dry_damaged,oily,frizzy,itchy,healthy,thin,coloured,natural,black_brown,blonde,light_brown,Colours,grey_silver,hydrated,volume,shine,smoothness,stronger_hair,frizz_free)
+
+
+        const answerContainers = quizMainContainer.querySelectorAll('.answers');
+        quizMainContainer.classList.add('slides-complete');
+        // add a class once quiz finished to slides
+        // keep track of user's answers
+        let numCorrect = 0;
+        // store answers to array
+        let UserAnswerResults = [];
+
+        let userAnswer;
+        // for each question...
+        myQuestions.forEach( (currentQuestion, questionNumber) => {
+
+          // find selected answer
+          const answerContainer = answerContainers[questionNumber];
+          const selector = `input[name=question${questionNumber}]:checked`;
+          userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+          // if answer is correct
+          // add answers to new array
+          UserAnswerResults.push(userAnswer);
+          // remove unused unused answers
+          UserAnswerResults.splice(3, 5);
+
+        });
+
+        for (let answers of myAnswers) {
+          console.log(UserAnswerResults.toString());
+          console.log(answers.match.toString());
+
+        if(UserAnswerResults.toString() === answers.match.toString()){
+
+           resultsContainer.innerHTML = `
+            <div class="results-intro">
+              <span class="heading-wrapper"><h3>Your hair profile quiz results!</h3></span>
+              <p>${answers.intro_para}</p>
+            </div>
+            <div class="products-wrapper" id="products-wrapper">
+             
+            </div>`;
+          var i;
+          for (i = 0; i < answers.results.length; i++) {
+
+          const productWrapper = document.getElementById('products-wrapper');
+          productWrapper.innerHTML += `<a href="${answers.results[i].link}">
+              <div class='sub-wrap'>
+                <span class="heading"><h3>${answers.results[i].name}</h3></span>
+                <img src="${answers.results[i].image}"/>
+                <p>${answers.results[i].info}</p>
+          </a>`;
+
+          }
+          
+          
+      }
+    }
+
+     }
+      
+
+      
+  
+}
+
+// display quiz right away
+buildQuiz();
+
+AnswerSelect();
+// Pagination
+const previousButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+function showSlide(n) {
+  slides[currentSlide].classList.remove('active-slide');
+  slides[n].classList.add('active-slide');
+  currentSlide = n;
+  if(currentSlide === 0){
+    previousButton.style.display = 'none';
+  }
+  else{
+    previousButton.style.display = 'inline-block';
+  }
+  if(currentSlide === slides.length-1){
+    console.log(slides.length-1);
+    slides[currentSlide].classList.add('form-display');
+    slides[currentSlide].id = 'form-display';
+    nextButton.style.display = 'none';
+    submitButton.style.display = 'inline-block';
+  }
+  else{
+    nextButton.style.display = 'inline-block';
+    submitButton.style.display = 'none';
+  }
+}
+
+
+
+function showNextSlide() {
+  const current_slide = document.querySelector('.active-slide');
+  const active_slide = document.querySelectorAll('.active-slide input');
+  window.scrollTo({
+	  top: 0,
+	  left: 0,
+	  behavior: 'smooth'
+	});
+	for (i = 0; i < active_slide.length; i++) {
+		if(active_slide[i].checked){
+			 showSlide(currentSlide + 1);
+		}
+		else {
+			current_slide.classList.add('errors')
+		}
+		
+	}
+ 
+}
+
+function showPreviousSlide() {
+  showSlide(currentSlide - 1);
+}
+
+showSlide(currentSlide);
+previousButton.addEventListener("click", showPreviousSlide);
+nextButton.addEventListener("click", showNextSlide);
+
+// on submit, show results
+submitButton.addEventListener('click', showResults);
+
+
+</script>
